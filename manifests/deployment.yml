@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: assignmentpartazurekubernetesrepo 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: assignmentpartazurekubernetesrepo
+  template:
+    metadata:
+      labels:
+        app: assignmentpartazurekubernetesrepo 
+    spec:
+      containers:
+        - name: assignmentpartazurekubernetesrepo 
+          image: assignment2webappkcontainerregistry.azurecr.io/assignmentpartazurekubernetesrepo
+          ports:
+          - containerPort: 8080
